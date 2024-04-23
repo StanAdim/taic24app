@@ -1,0 +1,49 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
+export default defineNuxtConfig({
+  devtools: { enabled: true },
+  modules: [
+    '@pinia/nuxt',
+
+  ],
+  app: {
+    head: {
+      title: 'TAIC - ICTC', // Set the default title for your application
+      meta: [
+        { charset: 'utf-8' },
+        { 'http-equiv': 'pragma', content: 'no-cache' },
+        { 'http-equiv': 'cache-control', content: 'no-cache' },
+        { 'http-equiv': 'expires', content: '0' },
+        { content: 'telephone=no', name: 'format-detection' }
+      ],
+      script: [
+        { hid:"jquery",  src: "/javascripts/jquery.min.js" , type:'text/javascript'},
+        { hid:"plugins",  src: "/javascripts/plugins.js" , type:'text/javascript'},
+        { hid:"purecounter",  src: "/javascripts/purecounter_vanilla.js" , type:'text/javascript'},
+        { hid:"validator",  src: "/javascripts/validator.min.js" , type:'text/javascript'},
+        { hid:"contact_form",  src: "/javascripts/contactform.js" , type:'text/javascript'},
+        { hid:"particles",  src: "/javascripts/particles.min.js" , type:'text/javascript'},
+        { hid:"script_mains",  src: "/javascripts/script.js" , type:'text/javascript'},
+
+        { hid:"mainjs",  src: "/javascripts/main.js" , type:'text/javascript'},
+        
+        { hid:"gliht box",  src: "/js/glightbox.min.js" , type:'text/javascript'},
+        { hid:"boostsrap",  src: "/js/bootstrap.bundle.min.js" , type:'text/javascript'},
+        { hid:"aos",  src: "/js/aos.js" , type:'text/javascript'},
+        { hid:"swiper",  src: "/js/swiper-bundle.min.js" , type:'text/javascript'},
+      ],
+      style: [
+
+      ]
+    }
+  },
+  runtimeConfig:{
+    public:{
+      appName:  'TAIC - ICTC',
+      apiBaseUlr: process.env.API_URL  || 'http://localhost:3130/public',
+      baseUrl: process.env.BASE_URL  || 'http://localhost:3000',
+    }
+  },
+  css:[
+
+  ]
+})
