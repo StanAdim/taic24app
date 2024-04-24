@@ -1268,19 +1268,22 @@ section {
 /*--------------------------------------------------------------
 # Our Team Section
 --------------------------------------------------------------*/
-
+#team .key-speaker {
+    color:#ec9f00;
+    font-weight: 500;
+    font-size:large;
+}
 .team .member {
     text-align: center;
     border-radius: 10px;
-    padding: 15px;
+    padding: 8px;
     overflow: hidden;
 }
 
 .team .member img {
     border-radius: 10px;
     overflow: hidden;
-    height: 350px;
-    width: 350px;
+    height: 300px;
 }
 
 .team .member .member-content {
