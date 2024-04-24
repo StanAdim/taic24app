@@ -156,12 +156,12 @@ h6 {
 --------------------------------------------------------------*/
 
 section {
-    padding: 60px 0;
+    padding: 20px 0;
     overflow: hidden;
 }
 
 .section {
-    padding: 60px 0;
+    padding: 20px 0;
     overflow: hidden;
     background: var(--light-color);
 }
@@ -178,18 +178,21 @@ section {
 
 .section-header {
     text-align: center;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
 }
 
 .section-header h2 {
-    font-size: 32px;
+    font-size: xx-large;
+    font-weight: 700;
     position: relative;
     color: var(--color-primary);
 }
 
 .section-header p {
     margin-bottom: 0;
-    color: #b8651d;
+    color: #096a9a;
+    font-size:large;
+    text-align: justify;
 }
 
 img {
@@ -453,6 +456,13 @@ img:hover {
 
 .header .logo img {
     max-height: 40px;
+    margin-right: 6px;
+}
+.header .logo span {
+    font-size:xx-large;
+    font-weight: 600;
+    color: #2ec5fb;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin-right: 6px;
 }
 
@@ -1269,6 +1279,8 @@ section {
 .team .member img {
     border-radius: 10px;
     overflow: hidden;
+    height: 350px;
+    width: 350px;
 }
 
 .team .member .member-content {
@@ -2566,12 +2578,20 @@ ul {
     z-index: 2;
     color: var(--text-color);
 }
+.site-icon{
+    font-size: 40px;
+    color:#f6a249;
+}
 
 .price h4 {
     margin: 0;
     padding: 20px 0;
-    color: var(--text-color);
-    font-size: 60px;
+    color:#025add;
+    font-size: 32px;
+}
+.price h4 span {
+    font-size: 18px;
+    color: #ec9f00;
 }
 
 .option {

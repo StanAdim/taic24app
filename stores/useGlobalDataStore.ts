@@ -1,10 +1,12 @@
-export const useGeneralDataStor = defineStore('generalData', () => {
+export const useGlobalDataStore = defineStore('glogalData', () => {
+
     const isloading = ref(false);
     const drawerState = ref(false);
     const showSidoUpdateForm = ref(false)
     const sidoApplicationCode = ref('APP-CODE');
     const notificationMessage = ref('')
     const showMessage = ref(false)
+    const longName = ref('Tanzania Annual ICT Conference')
    
       const getYearsArray = computed(() => {
         // const currentYear = new Date().getFullYear();
@@ -41,12 +43,13 @@ export const useGeneralDataStor = defineStore('generalData', () => {
       }  
       
       return { 
+          longName,
          notificationMessage, AssignNotificationMessage, 
          showMessage,toogleShowMessage, 
          getYearsArray, 
          showSidoUpdateForm,setSidoUpdateForm,
          setSidoApplicationCode,sidoApplicationCode,
          isloading, toogleLoading,
-         toogleDrawerState,drawerState
+         toogleDrawerState,drawerState,
         }
     })

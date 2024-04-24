@@ -3,7 +3,6 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     '@pinia/nuxt',
-
   ],
   app: {
     head: {
@@ -14,6 +13,9 @@ export default defineNuxtConfig({
         { 'http-equiv': 'cache-control', content: 'no-cache' },
         { 'http-equiv': 'expires', content: '0' },
         { content: 'telephone=no', name: 'format-detection' }
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/logo/ico.png' }
       ],
       script: [
         { hid:"jquery",  src: "/javascripts/jquery.min.js" , type:'text/javascript'},
@@ -44,6 +46,8 @@ export default defineNuxtConfig({
     }
   },
   css:[
-
+    '~/assets/stylesheets/custom-styles.css',
+    '~/assets/fontawesome/css/fontawesome.min.css',
+    '~/assets/fontawesome/css/solid.min.css','~/assets/fontawesome/css/brands.min.css',
   ]
 })
