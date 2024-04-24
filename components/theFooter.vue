@@ -1,20 +1,26 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const config = useRuntimeConfig()
+const year = new Date();
+</script>
 
 <template>
 <!--  Footer  -->
 <footer id="footer" class="footer-section">
     <div class="container">
-        <div class="footer-content pt-5 pb-5">
+        <div class="footer-content  pb-5">
             <div class="row">
                 <div class="col-xl-4 col-lg-4 mb-50">
                     <div class="footer-widget">
                         <div class="footer-logo">
-                            <a href="index.html" class="logo d-flex align-items-center">
-                          <img src="assets/images/logos/logo-min.png" alt="logo">
-                        </a>
+                            <nuxt-link to="/" class="logo d-flex align-items-center">
+                                <img src="assets/images/logos/logo-min.png" alt="logo">
+                             </nuxt-link>
                         </div>
                         <div class="footer-text">
-                            <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing elit,Lorem ipsum dolor sit amet.</p>
+                            <p>The Information and Communication Technologies Commission (ICTC) 
+                                was established by the Presidential Decree Government Notice 
+                                (GN) No.532 published in the Government Gazette No. 4 Vol. 96 
+                                dated 20 November 2015.</p>
                         </div>
                         <div class="footer-social-icon">
                             <span>Follow us</span>
@@ -32,12 +38,9 @@
                             <h3>Services</h3>
                         </div>
                         <ul class="list">
-                            <li><a href="services.html">Web Design</a></li>
-                            <li><a href="services.html">App Developemnt</a></li>
-                            <li><a href="services.html">Cloud Services</a></li>
-                            <li><a href="services.html">Domain adn Hosting</a></li>
-                            <li><a href="services.html">Seo Optimization</a></li>
-                            <li><a href="services.html">Social Media</a></li>
+                            <li><a href="https://ictc.go.tz">ICT Commission</a></li>
+                            <li><a href="https://mawasiliano.go.tz">Mawasiliano</a></li>
+                            <li><a href="https://iprs.ictc.go.tz">ICT Professional Registration</a></li>
                         </ul>
                     </div>
                 </div>
@@ -47,17 +50,9 @@
                             <h3>Information</h3>
                         </div>
                         <ul class="list">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="packages.html">Pricing</a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="porfolio.html">Portfolio</a></li>
-                            <li><a href="faq.html">FAQs</a></li>
-                            <li><a href="team.html">Team</a></li>
-                            <li><a href="blogs.html">Blogs</a></li>
-                            <li><a href="blogs-details.html">Blog Details</a></li>
-                            <li><a href="coming-soon.html">Coming Soon</a></li>
-                            <li><a href="privacy-policy.html">Terms & Conditions</a></li>
-                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                            <li><nuxt-link href="/">Home</nuxt-link></li>
+                            <li><a href="#price">Pricing</a></li>
+                            <li><nuxt-link href="/">Team</nuxt-link></li>
                         </ul>
                     </div>
                 </div>
@@ -67,9 +62,10 @@
                             <h3>Contacts</h3>
                         </div>
                         <div class="footer-text">
-                            <p><i class="bi bi-geo-alt-fill mr-15"></i> 101 West Town , PBO 12345, United States</p>
-                            <p><i class="bi bi-telephone-inbound-fill mr-15"></i> +1 1234 56 789</p>
-                            <p><i class="bi bi-envelope-fill mr-15"></i> contact@example.com</p>
+                            <p><i class="bi bi-geo-alt-fill mr-15"></i>14 Jamhuri Street, Dar es salaam </p>
+                            <p><i class="bi bi-telephone-inbound-fill mr-15"></i> +2557 38 171 742</p>
+                            <p><i class="bi bi-envelope-fill mr-15"></i> dg@ictc.go.tz</p>
+                            <p><i class="bi bi-envelope-fill mr-15"></i> info@ictc.go.tz</p>
                         </div>
                     </div>
                     <div class="footer-widget">
@@ -91,7 +87,7 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 text-left text-lg-left">
                     <div class="copyright-text">
-                        <p>Technoit © 2023 - Designed by <a href="https://www.templatemonster.com/authors/zrthemes/">Zr Themes</a></p>
+                        <p>{{ config.public.appName }} © {{year.getFullYear()}} - Designed by <a href="#">ICT Commission Team</a></p>
                     </div>
                 </div>
             </div>

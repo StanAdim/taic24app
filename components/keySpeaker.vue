@@ -1,16 +1,17 @@
 <script lang="ts" setup>
+const hasHonarableGuest = ref(false)
 const speakerList = ref([
-  {fullName: 'Jane Doe', designation: 
-  'Director - FireCodes', imgPath: '/team/placeholder.jpg'
+  {fullName: 'To be known', designation: 
+  'Designation', imgPath: '/team/placeholder.jpg'
    ,linkedIn: '', xLink: ''},
-  {fullName: 'Joel Doe', designation: 
-  'Head - Institute', imgPath: '/team/placeholder.jpg'
+  {fullName: 'To be known', designation: 
+  'Designation', imgPath: '/team/placeholder.jpg'
    ,linkedIn: '', xLink: ''},
-  {fullName: 'Jack Doe', designation: 
-  'Chief - Mteuzi', imgPath: '/team/placeholder.jpg'
+  {fullName: 'To be known', designation: 
+  'Designation', imgPath: '/team/placeholder.jpg'
    ,linkedIn: '', xLink: ''},
-  {fullName: 'Mieki Doe', designation: 
-  'Honorable - Funland', imgPath: '/team/placeholder.jpg'
+  {fullName: 'To be known', designation: 
+  'Designation', imgPath: '/team/placeholder.jpg'
    ,linkedIn: '', xLink: ''},
 ])
 </script>
@@ -25,9 +26,10 @@ const speakerList = ref([
             <p class="text-center">Speakers and Presenter and Fanicilitors</p>
         </div>
         <div class="row gy-1 justify-content-center">
-          <div class="col-md-6 aos-init aos-animate">
+          <div class="col-md-6 aos-init aos-animate" >
             <p class="text-center key-speaker">GUEST OF HONOUR</p>
-            <div class="member">
+            <UsablesSpinLoader v-if="!hasHonarableGuest" />
+            <div class="member" v-if="hasHonarableGuest">
                 <img src="/team/placeholder.jpg" class="img-fluid" alt="">
                 <h4>Sani Awesome</h4>
                 <span>Social Media</span>

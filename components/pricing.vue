@@ -1,4 +1,7 @@
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const hasPrice = ref(false)
+
+</script>
 
 <template>
 <!-- Start Pricing Section -->
@@ -16,7 +19,9 @@
                             <h2>Registered ICT Professional</h2>
                         </div>
                         <div class="price">
-                            <h4><span>TZS</span> 250,000</h4>
+                            <UsablesSpinLoader />
+
+                            <h4 v-if="hasPrice"><span>TZS</span> 250,000</h4>
                         </div>
                         <div class="option">
                             <ul>
@@ -33,7 +38,8 @@
                             <h2>Non registered ICT Professionals and other participants</h2>
                         </div>
                         <div class="price">
-                            <h4><span>TZS</span> 250,000</h4>
+                            <UsablesSpinLoader />
+                            <h4 v-if="hasPrice"><span>TZS</span> 250,000</h4>
                         </div>
                         <div class="option">
                             <ul>
@@ -50,7 +56,9 @@
                             <h2>Foreigner Participants </h2>
                         </div>
                         <div class="price">
-                            <h4><span>TZS</span> 250,000</h4>
+                            <UsablesSpinLoader />
+
+                            <h4 v-if="hasPrice"><span>TZS</span> 250,000</h4>
                         </div>
                         <div class="option">
                             <ul>

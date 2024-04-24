@@ -1,5 +1,5 @@
 <script setup>
-
+const hasAgenda = ref(false)
 </script>
 <template>
 <section>
@@ -8,7 +8,8 @@
             <h2>CONFERENCE AGENDA</h2>
         </div>
         <p class="text-center">Issues that will be under discussions and presentations</p>
-        <div class="row">
+        <UsablesSpinLoader />
+        <div class="row" v-if="hasAgenda">
             <!-- start  left -->
             <div class="col-md-4 left">
                 <div class="list-wrap" data-aos="fade-up" data-aos-delay="100">
