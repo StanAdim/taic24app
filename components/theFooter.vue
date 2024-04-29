@@ -51,8 +51,8 @@ const year = new Date();
                         </div>
                         <ul class="list">
                             <li><nuxt-link href="/">Home</nuxt-link></li>
-                            <li><a href="#price">Pricing</a></li>
-                            <li><nuxt-link href="/">Team</nuxt-link></li>
+                            <li><a href="/#price">Conference Fees</a></li>
+                            <li><nuxt-link href="/#team">Speakers</nuxt-link></li>
                         </ul>
                     </div>
                 </div>

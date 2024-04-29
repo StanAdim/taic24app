@@ -40,7 +40,7 @@ const speakerList = ref([
             </div>
           </div>
         </div>
-        <div class="row gy-4">
+        <div class="row gy-4 justify-content-center">
           <p class="text-center key-speaker">INVITED GUEST</p>
 
           <template  v-for="item in speakerList" :key="item">
