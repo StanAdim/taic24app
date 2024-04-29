@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-    title: 'TAIC - Timetable'
+    title: 'TAIC - Agendas'
 })
 definePageMeta({
     layout: 'auth'
@@ -8,7 +8,7 @@ definePageMeta({
 const globalData = useGlobalDataStore()
 </script>
 <template>
-        <AdminThePageTitle title="app timetable" />
+        <AdminThePageTitle title="app Agendas" />
     <div>
         
     </div>

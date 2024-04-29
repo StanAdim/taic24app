@@ -94,7 +94,7 @@ const handleForm = ()=> {
             </textarea>
         </div>
         <div class="mt-6">
-          <button class="bg-blue-500 text-white px-4 py-0.5 mx-3  rounded-md hover:bg-blue-600">Submit <i class="fa-regular fa-floppy-disk mx-2"></i></button>
+          <button class="bg-green-500 text-white px-4 py-0.5 mx-3  rounded-md hover:bg-green-600">Save <i class="fa-regular fa-floppy-disk mx-2"></i></button>
           <button @click="configStore.toogleDialog()" class="flex-shrink-0 bg-gray-500 hover:bg-gray-700 border-gray-500
                     hover:border-teal-700 text-sm border-4 text-white py-0.5 px-4 rounded"
                 type="button">
