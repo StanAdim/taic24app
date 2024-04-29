@@ -2,6 +2,7 @@ export const useGlobalDataStore = defineStore('glogalData', () => {
 
     const isloading = ref(false);
     const drawerState = ref(false);
+    const configurationDialogStatus = ref(false);
     const showSidoUpdateForm = ref(false)
     const sidoApplicationCode = ref('APP-CODE');
     const notificationMessage = ref('')
@@ -43,7 +44,7 @@ export const useGlobalDataStore = defineStore('glogalData', () => {
       }  
       
       return { 
-          longName,
+          longName, 
          notificationMessage, AssignNotificationMessage, 
          showMessage,toogleShowMessage, 
          getYearsArray, 
@@ -51,5 +52,6 @@ export const useGlobalDataStore = defineStore('glogalData', () => {
          setSidoApplicationCode,sidoApplicationCode,
          isloading, toogleLoading,
          toogleDrawerState,drawerState,
+         configurationDialogStatus,
         }
     })

@@ -2,8 +2,7 @@
 
 <template>
   <div>
-    Layout: guest
-    <slot />
+        <slot />
   </div>
 </template>
 
