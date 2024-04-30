@@ -1,6 +1,7 @@
 export const useGlobalDataStore = defineStore('glogalData', () => {
 
-    const isloading = ref(false);
+    const isloading = ref(true);
+    const messageBarIsOpen = ref(false)
     const configurationDialogStatus = ref(false);
     const showSidoUpdateForm = ref(false)
     const sidoApplicationCode = ref('APP-CODE');
@@ -24,16 +25,16 @@ export const useGlobalDataStore = defineStore('glogalData', () => {
         if(key === 'off') isloading.value = false;
        return  isloading.value
       }
-      const toogleShowMessage = ()=> {
-        showMessage.value ? showMessage.value = false : showMessage.value = true
+      const toogleShowMessageBar = ()=> {
+        messageBarIsOpen.value ? messageBarIsOpen.value = false : messageBarIsOpen.value = true
         setTimeout(function() {
-          showMessage.value ? showMessage.value = false : showMessage.value = true
+          messageBarIsOpen.value ? messageBarIsOpen.value = false : messageBarIsOpen.value = true
           notificationMessage.value = ''
-        }, 6500);
+        }, 2500);
       }
       const AssignNotificationMessage = (message : string)=> {
         notificationMessage.value = message
-        toogleShowMessage();
+        toogleShowMessageBar();
       }  
       const setSidoApplicationCode = (message : string)=> {
         return sidoApplicationCode.value = message
@@ -45,11 +46,12 @@ export const useGlobalDataStore = defineStore('glogalData', () => {
       return { 
           longName, 
          notificationMessage, AssignNotificationMessage, 
-         showMessage,toogleShowMessage, 
+         showMessage,toogleShowMessageBar, 
          getYearsArray, 
          showSidoUpdateForm,setSidoUpdateForm,
          setSidoApplicationCode,sidoApplicationCode,
          isloading, setLoadingTo,
          configurationDialogStatus,
+         messageBarIsOpen,
         }
     })

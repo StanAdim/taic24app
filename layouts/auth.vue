@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+const globalStore = useGlobalDataStore()
 const  asideOpen = ref(false);
 const  profileOpen = ref(true);
 const authStore = useAuthStore()
@@ -74,9 +75,14 @@ const sidebarLinks = ref([
             </nuxt-link>
            
         </aside>
-
+        <admin-message-bar 
+        :showStatus="globalStore.messageBarIsOpen" 
+        :message="globalStore.notificationMessage"/>
         <!-- main content page -->
         <div class="w-full p-4">
+            <template v-if="globalStore.isloading">
+                <usables-spin-loader />
+            </template>
           <slot />
         </div>
     </div>

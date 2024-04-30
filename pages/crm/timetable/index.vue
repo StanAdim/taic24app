@@ -3,7 +3,8 @@ useHead({
     title: 'TAIC - Timetable'
 })
 definePageMeta({
-    layout: 'auth'
+    layout:'auth',
+    middleware:'auth'
 })
 const globalData = useGlobalDataStore()
 </script>

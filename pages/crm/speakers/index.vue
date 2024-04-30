@@ -3,7 +3,8 @@ useHead({
     title: 'TAIC - Speakers'
 })
 definePageMeta({
-    layout: 'auth'
+    layout:'auth',
+    middleware:'auth'
 })
 const globalData = useGlobalDataStore()
 </script>

@@ -22,15 +22,20 @@ const year = today.getFullYear();
 const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
 const day = String(today.getDate()).padStart(2, '0');
 const formattedDate = `${year}-${month}-${day}`;
-
 const formData = ref({
     startDate : formattedDate,
     endDate : formattedDate,
     year:year
 })
-const handleForm = ()=> {
+const globalStore = useGlobalDataStore()
+const handleForm = async ()=> {
+    globalStore.setLoadingTo('on')
+    if(props.configurationAction == 'update'){
+        formData.value.id = props.passedItem
+    }
     formData.value.action = props.configurationAction
-    console.log(formData.value)
+    const {data, error}  = await configStore.createUpdateConfiguration(formData.value)
+    // console.log(formData.value)
 }
 </script>
 <template>
@@ -48,7 +53,7 @@ const handleForm = ()=> {
         <div class="flex justify-evenly ">
             <div class="mb-4 border-b-2 border-teal-500 py-2">
                 <label for="StartDate" class="block text-sm font-medium text-gray-700">Select Year</label>
-                <select v-model="formData.year" id="" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">
+                <select v-model="formData.conferenceYear" id="" class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none">
                     <option value="year" disabled>Choose Year</option>
                     <option v-for="year in configStore.getYearsArray" :key="year" :value="year">{{year}}</option>
                 </select>

@@ -89,7 +89,7 @@ const handleLogin = async ()=> {
 
 <style scoped>
 .alert {
-    @apply bg-red-50 py-0 my-2 px-2 text-center
+    @apply bg-red-50 py-0 my-2 px-2 text-center;
 }
 .password {
     
