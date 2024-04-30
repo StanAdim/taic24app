@@ -1,89 +1,76 @@
-type UserCredential = {
-    email: string,
-    password: string
-}
+
 type User = {
-    message:string,
-    code: number,
-    token:string,
-    data: UserInfo
-}
-type UserInfo = {
-    id: number
+    id:number,
     name: string,
-    email: string,
+    email:string,
+    
 }
+type Credential = {
+    email:string,
+    password:string,
+}
+type LoggedUser ={
+    id:number,
+    name:string,
+    token:string,
+    email:string,
+    email_verified_at:string,
+    created_at:string,
+    updated_at:string,
+    message:string
+}
+type RegistrationInfo = {
+    name: string;
+    email: string;
+    password: string;
+    password_confirmation: string;
+  }
+  
+export const useAuthStore = defineStore('auth', ()=> {
+    const  user = ref<User | null>(null)
+    const isLoggedIn = computed(()=> !!user.value)
+    const globalStore = useGlobalDataStore()
+    //Fetch Logout
+    async function fetchUser(){
+        const {data,error} = await useApiFetch('/api/auth/user');
+        if(data.value){
+            globalStore.setLoadingTo('off')
+            user.value = data.value as LoggedUser
 
-
-export const useAuthStore = defineStore('auth', () => {
-    const loggedUser = ref < User | null>(null)
-    const isLoggedIn = computed(() => !!loggedUser.value)
-    const userError = ref <any>(null)
-    //Fetch User
-    async function fetchUser() {
-        if(process.client){
-            const {data,error} = await useApiFetch('/api/user',{
-                headers: {
-                    Authorization:  `Bearer ${window.localStorage.getItem('token') }`
-                }
-            });
-            if(data.value){
-                loggedUser.value = data.value as User
-            }
-            userError.value = error.value?.statusCode
-            // console.log(error)
-            return {
-                data,error
-            }
         }
-        
+        return {
+            data,error
+        }
     }
-    //Register User
-    async function register(info: UserInfo){
-        await useApiFetch('/sanctum/csrf-cookie');
-        const registerRespose = await useApiFetch('/register',{
-          method: 'POST',
-          body: info as UserInfo
+    // Login
+    async function login(credentials: Credential){
+        await useApiFetch("/sanctum/csrf-cookie");
+        const {data, error} = await useApiFetch('/auth/login',{
+            method: 'POST',
+            body : credentials
         });
-        // console.log(registerRespose)
-        navigateTo('/guest/login')
-        return registerRespose;
+        await fetchUser();
+        if (user.value){ navigateTo('/crm/dashboard');}
+        return {data, error};
     }
-    //Login User
-    async function login(credentials: UserCredential){
-         await useApiFetch('/sanctum/csrf-cookie');
-        const {data, error} = await useApiFetch('/api/auth/log-user-in',{
-          method: 'POST',
-          body: credentials as UserCredential
-          
-        });
-        const responseData = data.value as User
-        if(responseData.code == 200){
-            loggedUser.value = data.value as User
-            localStorage.setItem('token',loggedUser.value?.token);
-            await fetchUser()
-        navigateTo('/crm/admin')
-       }
-        if(responseData.code == 300){
-        navigateTo('/auth/login')
-       }
-        return {data , error};
-    }
+    //Logout
     async function logout(){
-        if(process.client){
-                    await useApiFetch('/api/auth/log-user-out',{method: 'POST',
-        headers: {
-            Authorization:  `Bearer ${window.localStorage.getItem('token') }`
-        }
-         })
-        }
-        loggedUser.value = null
+      const logout =  await useApiFetch('/auth/logout', {method: 'POST'});
+        user.value = null;
         navigateTo('/auth/login')
+        return logout
     }
-    return { 
-            loggedUser, 
-            login, fetchUser,
-            isLoggedIn, userError,
-            logout,register
-         }
-  })
+    //Register
+    async function register(userInfo : RegistrationInfo){
+        await useApiFetch("/sanctum/csrf-cookie");
+        const register = await useApiFetch("/api/auth/register", {
+          method: "POST",
+          body: userInfo,
+        });
+        await fetchUser();
+        return register;
+    }
+    return {
+        user,login,isLoggedIn,logout,fetchUser,register
+    }
+}) 

@@ -42,8 +42,8 @@ export default defineNuxtConfig({
   runtimeConfig:{
     public:{
       appName:  'TAIC - ICTC',
-      apiBaseUlr: process.env.API_URL  || 'http://localhost:3130/public',
-      baseUrl: process.env.BASE_URL  || 'http://localhost:3000',
+      apiBaseUlr: process.env.API_URL ,
+      baseUrl: process.env.BASE_URL,
     }
   },
   css:[

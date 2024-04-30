@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 const  asideOpen = ref(false);
 const  profileOpen = ref(true);
+const authStore = useAuthStore()
 const sidebarLinks = ref([
     {name: 'Dashboard', path: '/crm/dashboard', icon:'fa-solid fa-house'},
     {name: 'Configuration', path: '/crm/configuration', icon:'fa-solid fa-gear'},
@@ -39,7 +40,7 @@ const sidebarLinks = ref([
                   <div class="h-9 w-9 rounded-full">
                     <i class="fa-solid fa-user text-3xl"></i>
                   </div>
-                    <div class="font-medium">User Name</div>
+                    <div class="font-medium">{{authStore.user?.name}}</div>
                 </div>
 
                 <!-- <div class="flex flex-col space-y-3 p-2">
@@ -56,7 +57,7 @@ const sidebarLinks = ref([
                                 d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
                             </path>
                         </svg>
-                        <div>Log Out</div>
+                        <div @click="authStore.logout">Log Out</div>
                     </button>
                 </div>
             </div>

@@ -1,11 +1,11 @@
 export const useGlobalDataStore = defineStore('glogalData', () => {
 
     const isloading = ref(false);
-    const drawerState = ref(false);
     const configurationDialogStatus = ref(false);
     const showSidoUpdateForm = ref(false)
     const sidoApplicationCode = ref('APP-CODE');
     const notificationMessage = ref('')
+
     const showMessage = ref(false)
     const longName = ref('Tanzania Annual ICT Conference')
    
@@ -19,11 +19,10 @@ export const useGlobalDataStore = defineStore('glogalData', () => {
         return yearsArray;
       })
       // toogle laoding 
-      const toogleDrawerState = ()=> {
-        return drawerState.value = !drawerState.value
-      }
-      const toogleLoading = ()=> {
-       return  isloading.value  = !isloading.value
+      const setLoadingTo = (key:string)=> {
+        if(key ==='on') isloading.value = true;
+        if(key === 'off') isloading.value = false;
+       return  isloading.value
       }
       const toogleShowMessage = ()=> {
         showMessage.value ? showMessage.value = false : showMessage.value = true
@@ -50,8 +49,7 @@ export const useGlobalDataStore = defineStore('glogalData', () => {
          getYearsArray, 
          showSidoUpdateForm,setSidoUpdateForm,
          setSidoApplicationCode,sidoApplicationCode,
-         isloading, toogleLoading,
-         toogleDrawerState,drawerState,
+         isloading, setLoadingTo,
          configurationDialogStatus,
         }
     })

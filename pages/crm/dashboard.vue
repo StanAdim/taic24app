@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 definePageMeta({
-    layout:'auth'
+    layout:'auth',
+    middleware:'auth'
 })
 useHead({
     title: 'TAIC - App Dashboard'
