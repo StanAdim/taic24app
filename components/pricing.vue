@@ -1,6 +1,19 @@
-<script lang="ts" setup>
+<script  setup>
 const hasPrice = ref(false)
-
+const global = useGlobalDataStore()
+const siteStore = useSiteDataStore()
+const feesSetup = ref([
+])
+async function retriveSitedata() {
+    const {data, error}  = await siteStore.retriveSiteData()
+    hasPrice.value = true;
+    feesSetup.value = [
+    {name: 'Registered ICT professional', fee: siteStore.getSitedData?.defaultFee, iconClass: 'fa-solid fa-user-tie', currency: 'Tsh' },
+    {name: 'Non registered ICT professionals and other participants', fee: siteStore.getSitedData?.guestFee, iconClass: 'fa-solid fa-user-tag', currency: 'Tsh' },
+    {name: 'Foreign participants', fee: siteStore.getSitedData?.foreignerFee, iconClass: 'fa-solid fa-earth-americas', currency: '$' },
+    ]
+}
+retriveSitedata()
 </script>
 
 <template>
@@ -12,53 +25,16 @@ const hasPrice = ref(false)
                 <h2>CONFERENCE FEES</h2>
             </div>
             <div class="row">
-                <div class="col-lg-4">
+                <div class="col-lg-4" v-for="item in feesSetup" :key="item.name">
                     <div class="card text-center">
                         <div class="title">
-                          <div class="site-icon"><i class="fa-solid fa-user-tie"></i></div>
-                            <h2>Registered ICT Professional</h2>
+                          <div class="site-icon"><i :class="item.iconClass"></i></div>
+                            <h2>{{item.name}}</h2>
                         </div>
                         <div class="price">
-                            <UsablesSpinLoader />
+                            <UsablesSpinLoader v-if="!hasPrice" />
 
-                            <h4 v-if="hasPrice"><span>TZS</span> 250,000</h4>
-                        </div>
-                        <div class="option">
-                            <ul>
-                                <!-- <li><i class="bi bi-check-circle" aria-hidden="true"></i> Unlimited GB Space</li> -->
-                                <!-- <li><i class="bi bi-check-circle" aria-hidden="true"></i> 30 Domain Names</li> -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card text-center">
-                        <div class="title">
-                          <div class="site-icon"><i class="fa-solid fa-user-tag"></i></div>
-                            <h2>Non registered ICT Professionals and other participants</h2>
-                        </div>
-                        <div class="price">
-                            <UsablesSpinLoader />
-                            <h4 v-if="hasPrice"><span>TZS</span> 250,000</h4>
-                        </div>
-                        <div class="option">
-                            <ul>
-                                <!-- <li><i class="bi bi-check-circle" aria-hidden="true"></i> Unlimited GB Space</li> -->
-                                <!-- <li><i class="bi bi-check-circle" aria-hidden="true"></i> 30 Domain Names</li> -->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="card text-center">
-                        <div class="title">
-                            <div class="site-icon"><i class="fa-solid fa-earth-americas"></i></div>
-                            <h2>Foreigner Participants </h2>
-                        </div>
-                        <div class="price">
-                            <UsablesSpinLoader />
-
-                            <h4 v-if="hasPrice"><span>TZS</span> 250,000</h4>
+                            <h4 v-if="hasPrice"><span>{{item.currency}}</span> {{item.fee}}</h4>
                         </div>
                         <div class="option">
                             <ul>

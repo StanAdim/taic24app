@@ -5,15 +5,15 @@ const  profileOpen = ref(true);
 const authStore = useAuthStore()
 const sidebarLinks = ref([
     {name: 'Dashboard', path: '/crm/dashboard', icon:'fa-solid fa-house'},
-    {name: 'Configuration', path: '/crm/configuration', icon:'fa-solid fa-gear'},
-    {name: 'Agenda', path: '/crm/agenda', icon:'fa-solid fa-list'},
+    {name: 'Conferences', path: '/crm/configuration', icon:'fa-solid fa-gear'},
+    {name: 'Schedules', path: '/crm/schedules', icon:'fa-brands fa-readme'},
     {name: 'Speakers', path: '/crm/speakers', icon:'fa-solid fa-person-chalkboard'},
+    {name: 'Agenda', path: '/crm/agenda', icon:'fa-solid fa-list'},
     {name: 'Sponsors', path: '/crm/sponsors', icon:'fa-solid fa-sack-dollar'},
     {name: 'TimeTable', path: '/crm/timetable', icon:'fa-solid fa-calendar-days'},
     {name: 'Goe to Site', path: '/', icon:'fa-solid fa-tent-arrow-turn-left'},
 ])
 </script>
-
 <template>
 <!-- page -->
 <main class="min-h-screen w-full bg-sky-100 text-gray-700" x-data="layout">

@@ -1,4 +1,4 @@
-<script lang="ts" setup>
+<script setup>
 const hasHonarableGuest = ref(false)
 const speakerList = ref([
   {fullName: 'To be known', designation: 
@@ -14,6 +14,7 @@ const speakerList = ref([
   'Designation', imgPath: '/team/placeholder.jpg'
    ,linkedIn: '', xLink: ''},
 ])
+const siteDataStore = useSiteDataStore()
 </script>
 
 <template>
@@ -43,16 +44,16 @@ const speakerList = ref([
         <div class="row gy-4 justify-content-center">
           <p class="text-center key-speaker">INVITED GUEST</p>
 
-          <template  v-for="item in speakerList" :key="item">
+          <template  v-for="item in siteDataStore.getSitedData?.speakers" :key="item">
             <div class="col-xl-3 col-md-6 d-flex aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                 <div class="member">
 
-                    <img :src="item.imgPath" class="img-fluid" :alt="item.fullName">
-                    <h4>{{item.fullName}}</h4>
+                    <img :src="item.imgPath" class="img-fluid" :alt="item?.name">
+                    <h4>{{item?.name}}</h4>
                     <span>{{item.designation}}</span>
                     <div class="social">
-                        <a :href="item.linkedIn"><i class="bi bi-twitter"></i></a>
-                        <a :href="item.xLink"><i class="bi bi-linkedin"></i></a>
+                        <a :href="item.twitterLink"><i class="bi bi-twitter"></i></a>
+                        <a :href="item.linkedinLink"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>

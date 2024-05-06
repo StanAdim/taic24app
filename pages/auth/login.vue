@@ -12,14 +12,14 @@ const errorMessage = ref('')
 const authStore = useAuthStore()
 const globalStore = useGlobalDataStore()
 const loginCredential = ref({
-  email: 'test@mail1.com',
+  email: 'test@mail.com',
   password: '123456'
 })
 const handleLogin = async ()=> {
     globalStore.setLoadingTo('on')
     if(authStore.isLoggedIn) return
     const {error} = await authStore.login(loginCredential.value)
-     console.log(error.value?.data);
+    //  console.log(error.value)
   if(error.value?.data){
     globalStore.setLoadingTo('off')
     hasError.value = true

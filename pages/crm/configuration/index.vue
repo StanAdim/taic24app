@@ -34,20 +34,8 @@ handleCall();
         <div class=" mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         <div class="w-full max-w-sm mx-auto px-4 py-2">
             <div class="flex justify-center items-center border-b-2 border-teal-500 py-2">
-
-                <button @click="handleCall()"
-                    class="mx-1 flex-shrink-0 bg-teal-500 hover:bg-teal-700 
-                    border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
-                    type="button">
-                    Refresh <i class="fa-solid fa-arrows-rotate mx-2"></i>
-                </button>
-                <button @click="openDialog('create', '')"
-                    class="mx-1 flex-shrink-0 bg-teal-500 hover:bg-teal-700 
-                    border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
-                    type="button">
-                    Add <i class="fa-solid fa-plus mx-2"></i>
-                </button>
-                
+                <UsablesTheButton  @click="handleCall()" :is-normal="true" name="Refresh" iconClass="fa-solid fa-arrows-rotate" />  
+                <UsablesTheButton  @click="openDialog('create', '')" :is-normal="true" name="Add Conference" iconClass="fa-solid fa-plus" />  
             </div>
         </div>
         <ul class="divide-y divide-gray-300 px-4" v-if="configStore.getConferences">

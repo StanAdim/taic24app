@@ -15,17 +15,9 @@ const props = defineProps({
 })
 
 const configStore = useConfigurationStore()
-const today = new Date()
 
-// Extract year, month, and day
-const year = today.getFullYear();
-const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-indexed
-const day = String(today.getDate()).padStart(2, '0');
-const formattedDate = `${year}-${month}-${day}`;
 const formData = ref({
-    startDate : formattedDate,
-    endDate : formattedDate,
-    year:year
+
 })
 const globalStore = useGlobalDataStore()
 const handleForm = async ()=> {
@@ -35,6 +27,7 @@ const handleForm = async ()=> {
     }
     formData.value.action = props.configurationAction
     const {data, error}  = await configStore.createUpdateConfiguration(formData.value)
+    formData.value = {}
     // console.log(formData.value)
 }
 </script>
