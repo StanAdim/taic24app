@@ -7,7 +7,7 @@ export default defineNuxtConfig({
   ],
   app: {
     head: {
-      title: 'TAIC - ICTC', // Set the default title for your application
+      title: 'TAIC - 2024', // Set the default title for your application
       meta: [
         { charset: 'utf-8' },
         { 'http-equiv': 'pragma', content: 'no-cache' },
@@ -41,7 +41,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig:{
     public:{
-      appName:  'TAIC - ICTC',
+      appName:  'TAIC',
       apiBaseUlr: process.env.API_URL ,
       baseUrl: process.env.BASE_URL,
     }

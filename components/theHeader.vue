@@ -6,7 +6,7 @@ const config = useRuntimeConfig()
     <header id="header" class="header d-flex align-items-center sticked stikcy-menu">
         <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
             <nuxt-link to="/" class="logo d-flex align-items-center">
-              <span>{{ config.public.appName }}</span>
+              <span>8 <sup>th</sup> TAIC </span>
                 <!-- <img src="assets/images/logo.png" alt="logo"> -->
             </nuxt-link>
             <nav id="navbar" class="navbar">
@@ -27,7 +27,7 @@ const config = useRuntimeConfig()
                 </ul>
             </nav>
             <!-- .navbar -->
-            <nuxt-link to="" class="btn-get-started hide-on-mobile">Register Now</nuxt-link>
+            <!-- <nuxt-link to="" class="btn-get-started hide-on-mobile">Register Now</nuxt-link> -->
             <button id="darkmode-button"><i class="bi bi-moon-fill"></i></button>
             <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
             <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
