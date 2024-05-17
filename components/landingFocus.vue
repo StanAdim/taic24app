@@ -9,7 +9,8 @@ const global = useGlobalDataStore()
 const getSitedData = ref({
     conferenceYear: 2024,
     theme: 'Unleashing the Power of Artificial Intelligence and Robotics for socio-economic Transformation',
-    venue: 'Dodoma'
+    venue: 'Julius Nyerere International Convention Centre (JNICC)',
+    location:'Dar es salaam'
 })
 </script>
 <template>
@@ -26,7 +27,8 @@ const getSitedData = ref({
                     
                     <!-- <p data-aos="fade-up" data-aos-delay="400">You can easily change any design to your own. It is also highly customizable SEO friendly template.</p> -->
                     <p class="event-dates" data-aos="fade-up" data-aos-delay="400">13<sup>tht</sup> - 17<sup>th</sup> October 2024</p>
-                    <p class="event-dates" data-aos="fade-up" data-aos-delay="400">Location: {{getSitedData?.venue}}</p>
+                    <p class="event-dates" data-aos="fade-up" data-aos-delay="400">Location: {{getSitedData?.location}}</p>
+                    <p class="event-dates" data-aos="fade-up" data-aos-delay="400">{{getSitedData?.venue}}</p>
                     <div class="d-flex justify-content-start">
                         <!-- <a href="#contact" class="btn-get-started mr-20" data-aos="fade-up" data-aos-delay="800">Get Quotes</a> -->
                         <!-- <a href="#registerNow" class="btn-get-started" data-aos="fade-up" data-aos-delay="1000">Register Now</a> -->

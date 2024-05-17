@@ -28,15 +28,12 @@ export default defineNuxtConfig({
         { hid:"script_mains",  src: "/javascripts/script.js" , type:'text/javascript'},
 
         { hid:"mainjs",  src: "/javascripts/main.js" , type:'text/javascript'},
-        
         { hid:"gliht box",  src: "/js/glightbox.min.js" , type:'text/javascript'},
         { hid:"boostsrap",  src: "/js/bootstrap.bundle.min.js" , type:'text/javascript'},
         { hid:"aos",  src: "/js/aos.js" , type:'text/javascript'},
         { hid:"swiper",  src: "/js/swiper-bundle.min.js" , type:'text/javascript'},
       ],
-      style: [
-
-      ]
+      style: []
     }
   },
   runtimeConfig:{
@@ -49,6 +46,7 @@ export default defineNuxtConfig({
   css:[
     '~/assets/stylesheets/custom-styles.css',
     '~/assets/fontawesome/css/fontawesome.min.css',
-    '~/assets/fontawesome/css/solid.min.css','~/assets/fontawesome/css/brands.min.css',
+    '~/assets/fontawesome/css/solid.min.css',
+    '~/assets/fontawesome/css/brands.min.css',
   ]
 })
