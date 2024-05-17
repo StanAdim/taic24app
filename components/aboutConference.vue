@@ -7,7 +7,7 @@
 // retriveSitedata()
 const getSitedData = ref({
     aboutConference: `The Tanzania Annual ICT Conference (TAIC) is the biggest ICT sector event in Tanzania organised annually by the ICT Commission (ICTC). 
-    As for the last six conferences, TAIC brings together stakeholders including academia, researchers, development partners,
+    As for the last seven conferences, TAIC brings together stakeholders including academia, researchers, development partners,
      business industry, investors and youth in digital innovation spaces and practitioners in the ICT Industry.
       The conference aims to call the attention of all stakeholders through discussion and knowledge sharing on matters 
       related to policy, research, innovation and business aspects of the digital economy and ICT sector contribution to Tanzania’s 

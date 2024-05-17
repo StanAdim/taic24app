@@ -15,7 +15,7 @@ const getSitedData = ref({
 <template>
     <section id="hero" class="hero sticked-header-offset">
         <particle />
-        <div id="repulse-circle-div"></div>
+        <!-- <div id="repulse-circle-div"></div> -->
         <!-- <div class="container position-relative landing-focus" v-if="siteStore.getSitedData"> -->
         <div class="container position-relative landing-focus" >
             <div class="row gy-5 aos-init aos-animate">
