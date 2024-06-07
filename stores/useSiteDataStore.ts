@@ -9,7 +9,7 @@ export const useSiteDataStore = defineStore('siteData', () => {
     const getSitedData = computed(()=> siteData.value)
    
     //Action
-    async function retriveSiteData() {
+    async function retrieveSiteDate() {
       const {data, error} = await useApiFetch('/api/site-data');
       const dataResponse = data.value as ApiResponse
       if(dataResponse.code === 200){
@@ -21,7 +21,7 @@ export const useSiteDataStore = defineStore('siteData', () => {
       
       return { 
           getSitedData,
-          retriveSiteData,
+          retrieveSiteDate,
          
         }
     })

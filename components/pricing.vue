@@ -1,21 +1,21 @@
 <script  setup>
-const hasPrice = ref(false)
+const hasPrice = ref(true)
 const global = useGlobalDataStore()
 // const siteStore = useSiteDataStore()
 const feesSetup = ref([
 ])
 const getSitedData = ref({
-    defaultFee: 0,
-    guestFee: 0,
-    foreignerFee: 0
+    defaultFee: 420000,
+    guestFee: 500000,
+    foreignerFee: 300
 })
 async function retriveSitedata() {
     // const {data, error}  = await siteStore.retriveSiteData()
-    hasPrice.value = false;
+    // hasPrice.value = false;
     feesSetup.value = [
-    {name: 'Registered ICT professional', fee: getSitedData?.defaultFee, iconClass: 'fa-solid fa-user-tie', currency: 'Tsh' },
-    {name: 'Non registered ICT professionals and other participants', fee: getSitedData?.guestFee, iconClass: 'fa-solid fa-user-tag', currency: 'Tsh' },
-    {name: 'Foreign participants', fee: getSitedData?.foreignerFee, iconClass: 'fa-solid fa-earth-americas', currency: '$' },
+    {name: 'Registered ICT professional', fee: getSitedData.value?.defaultFee, iconClass: 'fa-solid fa-user-tie', currency: 'Tsh' },
+    {name: 'Non registered ICT professionals and other participants', fee: getSitedData.value?.guestFee, iconClass: 'fa-solid fa-user-tag', currency: 'Tsh' },
+    {name: 'Foreign participants', fee: getSitedData.value?.foreignerFee, iconClass: 'fa-solid fa-earth-americas', currency: '$' },
     ]
 }
 retriveSitedata()
@@ -38,7 +38,6 @@ retriveSitedata()
                         </div>
                         <div class="price">
                             <UsablesSpinLoader v-if="!hasPrice" />
-
                             <h4 v-if="hasPrice"><span>{{item.currency}}</span> {{item.fee}}</h4>
                         </div>
                         <div class="option">

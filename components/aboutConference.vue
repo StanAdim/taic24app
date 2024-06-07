@@ -6,15 +6,22 @@
 // }
 // retriveSitedata()
 const getSitedData = ref({
-    aboutConference: `The Tanzania Annual ICT Conference (TAIC) is the biggest ICT sector event in Tanzania organised annually by the ICT Commission (ICTC). 
-    As for the last seven conferences, TAIC brings together stakeholders including academia, researchers, development partners,
-     business industry, investors and youth in digital innovation spaces and practitioners in the ICT Industry.
-      The conference aims to call the attention of all stakeholders through discussion and knowledge sharing on matters 
-      related to policy, research, innovation and business aspects of the digital economy and ICT sector contribution to Tanzania’s 
-      economic growth and global digital presence. The 07th Tanzania Annual ICT Conference 2024 (TAIC 2024) 
-      will be held at the Julius Nyerere International Conference Centre (JNICC). TAIC 2024 will have pre-conference events 
-      of Women and Youth in ICT open to the public and will be held on 13th and 17th October 2024 respectively. 
-      The main TAIC 2024 will be held from 18th to 20th October 2024.`
+    aboutConference1: `The 8th Tanzania Annual ICT Conference 2024 (TAIC-2024), first Africa Edition, organized by the
+    ICT Commission (ICTC), in collaboration with ELEVATE and the African Union Development Agency-NEPAD (AUDA-NEPAD),
+    is scheduled to take place in Dar es Salaam, Tanzania at the Julius Nyerere International Conference Centre (JNICC)
+    from October 23rd to October 25th, 2024. Pre-conference events, including the African AI Competition, are planned for
+    October 21st and 22nd, and will be open to public participation.`,
+  aboutConference2: `Building on the success of previous conferences, TAIC-2024 will gather a broad spectrum of participants,
+  including ICT professionals, practitioners, academics, researchers, development partners, industry leaders, and innovators in digital technology.
+  This year’s theme, “Unleashing the Power of Artificial Intelligence and Robotics for Socio-economic Transformation”, focuses on the transformative
+  impact of these technologies across various sectors.`,
+  aboutConference3: `At a pivotal time when the global economy is embracing digital transformation,
+  Tanzania is strategically advanc- ing its economic policies to exploit the full potential of AI and robotics.
+  This effort is aimed at transitioning into a higher middle-income economy.
+  TAIC-2024 will provide an invaluable platform for sharing innovative ideas, practices, and research findings among ICT profession- als,
+  academia, government and private institutions, and development partners. This gathering is essential for steering Tanzania
+  towards a digitally empowered economy, characterized by enhanced ICT accessibility, affordability, and availability.`,
+
 })
 </script>
 <template>
@@ -23,7 +30,10 @@ const getSitedData = ref({
         <div class="section-header" data-aos="fade-up" data-aos-delay="100">
             <h2>ABOUT CONFERENCE</h2>
         </div>
-        <p>{{getSitedData?.aboutConference }}</p>
+        <p>{{getSitedData?.aboutConference1 }}</p>
+        <p>{{getSitedData?.aboutConference2 }}</p>
+        <p>{{getSitedData?.aboutConference3 }}</p>
+
     </div>
 </section>
 </template>

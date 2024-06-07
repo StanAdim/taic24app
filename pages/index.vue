@@ -8,9 +8,9 @@
         <pricing />
         <!-- End Pricing Section -->
         <!-- Featured -->
-        <featured />
+<!--        <featured />-->
         <!-- Featured -->
-        <KeySpeaker />
+<!--        <KeySpeaker />-->
 
         
   </div>
