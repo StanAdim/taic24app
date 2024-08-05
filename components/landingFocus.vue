@@ -35,6 +35,9 @@ const getSitedData = ref({
                       <a href="/static/files/documents/ConceptNote.pdf" target="_blank">
                           <usables-dowload-btn name="TAIC Extra Details" />
                       </a>
+                      <a href="/static/files/documents/call_for_speakers_2024.pdf" target="_blank">
+                        <usables-dowload-btn name="Cal For Speakers" />
+                      </a>
                     </div>
                 </div>
             </div>

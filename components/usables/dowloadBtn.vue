@@ -58,6 +58,7 @@ const props = defineProps({
   font-weight: 600;
   border-radius: 4px;
   z-index: 1;
+  margin: .2rem .1rem;
 }
 
 .download-button .docs {
